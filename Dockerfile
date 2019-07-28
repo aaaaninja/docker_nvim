@@ -8,4 +8,5 @@ RUN apt update && apt upgrade -y && apt install -y busybox-static git build-esse
   && cd $HOME && busybox wget https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh && sh installer.sh $HOME/.cache/dein \
   && git clone https://github.com/k1nPr45b0/nvim_config.git $HOME/.config/nvim
 
+# 参考 => https://github.com/Shougo/dein.vim/issues/314
 RUN nvim -N -c 'try | finally | qall! | endtry' -es -u $HOME/.config/nvim/init.vim
